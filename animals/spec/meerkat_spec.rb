@@ -2,9 +2,10 @@ require_relative '../meerkat'
 
 describe Meerkat do
   describe "#talk" do
-    it 'returns string that says the meerkat bark' do
-      timone = Meerkat.new('Timone')
-      expect(timone.talk).to eq('Timone barks')
+    it 'bark with name' do
+      nala = Meerkat.new('Nala')
+
+      expect(nala.talk).to eq "Nala barks"
     end
   end
 end

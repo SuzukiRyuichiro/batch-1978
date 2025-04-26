@@ -1,38 +1,44 @@
 require_relative '../animal'
 # Define an Animal with an initialize(name) constructor, exposing its name.
+# Define three Lion, Meerkat and Warthog classes
+# Implement a #talk instance method which returns a sentence like "Simba roars" for each animal. (Hint: Meerkats bark and Warthog grunt)
+# In another Ruby file, create an array with Simba, Nala, Timon & Pumbaa, iterate over it and puts the sound each animal make
+# Implement a ::phyla class method which will return an array of the phyla of the animal kingdom.
+# Add an #eat(food) instance method in Animal which returns a sentence like “Timon eats a scorpion”. Then override this method for the Lion class, and return a sentence like “Simba eats a gazelle. Law of the Jungle!”
 
 describe Animal do
   describe "#initialize" do
-    it 'takes one argument and make an instance of Animal' do
-      antonio = Animal.new("Antonio")
-      # If antonio is actually an instance of Animal
-      # antonio.class == Animal
-      expect(antonio).to be_an(Animal)
+    it 'instanciate an Animal with name' do
+      animal = Animal.new("Simba")
+
+      # Check if the instance is actually of that class
+      expect(animal).to be_an(Animal)
     end
   end
 
-  describe "#name" do
-    it 'returns the name of the animal' do
-      antonio = Animal.new("Antonio")
-      expect(antonio.name).to eq('Antonio')
+  describe "readers" do
+    it 'can read name' do
+      animal = Animal.new("Simba")
+
+      # Check if the instance is actually of that class
+      expect(animal.name).to eq('Simba')
     end
   end
 
   describe "::phyla" do
-    it 'return all 5 phylas in the world' do
-      expected = ['Fish', 'Mammals', 'Insects', 'Birds', 'Reptiles']
+    it 'returns array of phyla of animals' do
+      expected = ["fish", "dog", "snake"]
       actual = Animal.phyla
 
-      expect(expected).to  eq(actual)
+      expect(expected).to eq(actual)
     end
   end
 
   describe "#eat" do
-    it 'returns the string explaining who ate what' do
-      phuong = Animal.new('Phuong')
+    it 'returns string explaining who ate what' do
+      animal = Animal.new("Timone")
 
-      expect(phuong.eat('chicken')).to eq('Phuong eats chicken')
+      expect(animal.eat('scorpion')).to eq("Timone eats scorpion")
     end
   end
-
 end

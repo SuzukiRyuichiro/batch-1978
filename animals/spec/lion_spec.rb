@@ -2,17 +2,18 @@ require_relative '../lion'
 
 describe Lion do
   describe "#talk" do
-    it 'returns string that says the lion roared' do
+    it 'roar with name' do
       simba = Lion.new('Simba')
-      expect(simba.talk).to eq('Simba roars')
+
+      expect(simba.talk).to eq "Simba roars"
     end
   end
 
-  describe "#eat" do
-    it 'returns the string explaining who ate what and law of the jungle!' do
-      simba = Lion.new('Simba')
+   describe "#eat" do
+    it 'returns string explaining who ate what with king of the jungle' do
+      lion = Lion.new("Simba")
 
-      expect(simba.eat('gazelle')).to eq('Simba eats gazelle. Law of the jungle!')
+      expect(lion.eat('gazelle')).to eq("Simba eats gazelle. Law of the Jungle!")
     end
   end
 end

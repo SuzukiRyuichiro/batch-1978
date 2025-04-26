@@ -5,8 +5,7 @@ class Lion < Animal
     "#{@name} roars"
   end
 
-  # TODO: define eat instance method that overrides the one in animal
   def eat(food)
-    "#{super}. Law of the jungle!"
+    "#{super}. Law of the Jungle!"
   end
 end
