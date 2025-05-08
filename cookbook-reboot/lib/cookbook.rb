@@ -3,34 +3,43 @@ require_relative 'recipe'
 
 class Cookbook
   def initialize(csv_file)
-    @recipes = [] # We are going to store many different Recipe instances
+    @recipes = [] # where we store recipe instances
     @csv_file = csv_file
+    # TODO: Load the csv file
     load_csv
   end
 
   def all
     # Return all the recipes in the cookbook
-    return @recipes
+    @recipes
   end
 
-  def create(recipe) # Takes Recipe instance as an argument
+  def create(recipe) # Expect an instance of Recipe as an argument
+    # add the recipe to @recipes
     @recipes << recipe
+    # TODO: save this new array of @recipes to csv
     save_to_csv
   end
 
-  def destroy(recipe_index) # Expect an integer as an argument
+  def destroy(recipe_index) # Expect an integer
+    # remove the recipe from @recipes at the given index
     @recipes.delete_at(recipe_index)
+    # TODO: save this new array of @recipes to csv
     save_to_csv
   end
+
+  private
 
   def load_csv
-    # Open the csv in the file location, load the preexisting recipes
+    # First open the csv in the file location
     CSV.foreach(@csv_file) do |row|
-      # recreate the instance using the info in row
+      # Iterate over each row of the csv
+      # On each iteration, we want to re-instantiate the Recipe with the given info on each row
       name = row[0]
       description = row[1]
-      @recipes << Recipe.new(name, description)
-      # put them back in to @recipes
+      recipe = Recipe.new(name, description)
+      # After re-instantiating, put them back into the @recipes array
+      @recipes << recipe
     end
   end
 
@@ -39,7 +48,7 @@ class Cookbook
     CSV.open(@csv_file, 'wb') do |csv|
       # Iterate over the @recipes array
       @recipes.each do |recipe|
-        # save name, description into each row of the CSV
+        # On every iteration, put the name and description of the recipe into a row
         csv << [recipe.name, recipe.description]
       end
     end

@@ -8,30 +8,31 @@ class Controller
   end
 
   def list
-    # ask cookbook to get all the recipes
+    # Ask the cookbook to give us all the recipes
     recipes = @cookbook.all
-    # tell view to display it nicely
+    # Ask the view to display them nicely
     @view.display_list(recipes)
   end
 
   def add
-    # Ask the user for name of the recipe (View)
+    # Ask the view to get name
     name = @view.ask_for_name
-    # Ask the user for description of the recipe (View)
+    # Ask the view to get the description
     description = @view.ask_for_description
-    # Tell the model to make an instance
+    # Make an instance of Recipe with that info
     recipe = Recipe.new(name, description)
-    # Tell cookbook to store (create) the instantiated Recipe.
+    # Ask the cookbook to save the recipe
     @cookbook.create(recipe)
   end
 
   def remove
-    # 1. Display recipes
+    # Ask the cookbook to get all the recipes
     recipes = @cookbook.all
+    # Ask the view to display the list of recipes
     @view.display_list(recipes)
-    # 2. Ask user for index (view)
+    # Ask the view to get the desired index to remove
     index = @view.ask_for_index
-    # 3. Remove from cookbook (repo)
+    # Ask the cookbook to destroy the recipe at given index
     @cookbook.destroy(index)
   end
 end
