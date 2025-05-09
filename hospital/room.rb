@@ -1,29 +1,29 @@
 class Room
-  attr_reader :patients, :capacity
   attr_accessor :id
 
   def initialize(attributes = {})
     @id = attributes[:id]
-    @capacity = attributes[:capacity]
     @patients = attributes[:patients] || []
+    @capacity = attributes[:capacity] || 0
   end
 
-  def add_patient(patient) # Expects instance of patient
-    # Check if the room is full, if it is, error out
-    if full?
-      raise StandardError, "We cannot let #{patient.name} in!"
-    else
-      # If not continue adding
-      @patients << patient
-      # Assign attribute room to the patient
-      patient.room = self
-    end
+  def add_patient(patient) # Expect instance of patient
+    # Check if the room is full
+    # raise error (Guard Clause)
+    raise FullRoom, "Room is over capacity. Max: #{@capacity}" if full?
+
+    # Put the patient instance into @patients
+    @patients << patient
+    # Make sure patient get the room as their attribute
+    patient.room = self
   end
 
   private
 
   def full?
-    # Return boolean if the room is over capacity?
-    @patients.count >= @capacity
+    # number of patients is greater than or equal to capacity
+    @patients.size >= @capacity
   end
 end
+
+class FullRoom < StandardError; end
