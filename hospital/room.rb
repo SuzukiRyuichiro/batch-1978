@@ -2,7 +2,7 @@ class Room
   attr_reader :patients, :capacity
   attr_accessor :id
 
-  def initialize(attributes)
+  def initialize(attributes = {})
     @id = attributes[:id]
     @capacity = attributes[:capacity]
     @patients = attributes[:patients] || []
