@@ -28,6 +28,18 @@ class OrderRepository
     @orders.reject { |order| order.delivered? }
   end
 
+  def my_undelivered_orders(employee) # Expect an instance of employee
+    # Select only orders assigned to the given employee instance AND delivered state is false
+    @orders.select { |order| order.employee == employee && !order.delivered? }
+  end
+
+  def mark_as_delivered(order) # Expect an instance of order
+    # Flip the delivered state of the order to true
+    order.deliver!
+    # Save them in CSV
+    save_csv
+  end
+
   private
 
   def load_csv
