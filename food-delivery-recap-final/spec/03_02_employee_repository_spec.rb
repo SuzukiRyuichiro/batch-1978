@@ -21,7 +21,7 @@ describe "EmployeeRepository", :employee do
       [ "id", "username", "password", "role" ],
       [ 1, "paul", "secret", "manager" ],
       [ 2, "john", "secret", "rider" ],
-      [ 3, "ringo", "secret", "rider" ]
+      [ 3, "ringo", "secret", "rider"]
     ]
   end
   let(:csv_path) { "spec/support/employees.csv" }
@@ -69,6 +69,11 @@ describe "EmployeeRepository", :employee do
     end
   end
 
+  it "EmployeeRepository should not implement a create method (we'll create employees manually in the CSV)" do
+    repo = EmployeeRepository.new(csv_path)
+    expect(repo).not_to respond_to(:create)
+  end
+
   describe "#all_riders" do
     it "should return all the riders stored by the repo" do
       repo = EmployeeRepository.new(csv_path)
@@ -81,11 +86,6 @@ describe "EmployeeRepository", :employee do
       repo = EmployeeRepository.new(csv_path)
       expect(repo).not_to respond_to(:employees)
     end
-  end
-
-  it "EmployeeRepository should not implement an add method (we'll add employees manually to the CSV)" do
-    repo = EmployeeRepository.new(csv_path)
-    expect(repo).not_to respond_to(:add)
   end
 
   describe "#find" do
