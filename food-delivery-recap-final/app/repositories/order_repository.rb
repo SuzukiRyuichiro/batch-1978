@@ -16,6 +16,7 @@ class OrderRepository
   end
 
   def create(order)
+    # Assign the id
     order.id = @next_id
     @orders << order
     @next_id += 1
