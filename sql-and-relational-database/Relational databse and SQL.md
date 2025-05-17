@@ -3,26 +3,18 @@
 ## Select
 
 ```sql
-SELECT columns FROM table_name;
+SELECT columns you want FROM table name;
 ```
 
-exmaples
+Filtering
 
 ```sql
-SELECT * FROM doctors;
+SELECT * FROM docotrs WHERE age > 25;
 ```
 
-```sql
-SELECT id, name FROM doctors;
-```
-
-You can filter things
+Ordering
 
 ```sql
-SELECT * FROM doctors WHERE id = 3;
-```
-
-```sql
-SELECT * FROM doctors WHERE speciality = 'Psycology';
+select * from doctors order by age asc;
 ```
 
