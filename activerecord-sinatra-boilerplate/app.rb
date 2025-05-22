@@ -4,5 +4,11 @@ require "sinatra/reloader"
 require "sinatra/activerecord"
 
 get "/" do
-  "Hello world!"
+  # do stuff
+  "Le wagon"
+end
+
+get "/home" do
+  # do stuff
+  "Homepage"
 end
