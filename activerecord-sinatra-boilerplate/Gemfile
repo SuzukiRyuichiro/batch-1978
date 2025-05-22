@@ -13,3 +13,10 @@ gem "sinatra-contrib"
 gem "sqlite3", '~> 1.7.3'
 
 gem "rackup", "~> 2.1"
+
+gem "htmlbeautifier", "~> 1.4"
+
+gem "fiddle", "~> 1.1"
+
+gem "logger", "~> 1.7"
+gem "ostruct", "~> 0.6.1"
