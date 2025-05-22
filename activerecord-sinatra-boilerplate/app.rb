@@ -11,7 +11,10 @@ get "/" do
   erb :index
 end
 
-get "/home" do
+get "/restaurants/:id" do
   # do stuff
-  "Homepage"
+  # Get the restaurant instance with ID in the param
+  @restaurant = Restaurant.find(params[:id])
+  # Display the details with view
+  erb :show
 end
