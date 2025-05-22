@@ -4,8 +4,11 @@ require "sinatra/reloader"
 require "sinatra/activerecord"
 
 get "/" do
-  # do stuff
-  "Le wagon"
+  # GOAL: List all the restaurants (name)
+  # Get all the restaurant instances (Model)
+  @restaurants = Restaurant.all
+  # Display all the restaurant names (View)
+  erb :index
 end
 
 get "/home" do
