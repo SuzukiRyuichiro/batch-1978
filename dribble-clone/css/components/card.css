@@ -1,0 +1,89 @@
+.card {
+  width: 320px;
+}
+
+.card-img {
+  height: 240px;
+  width: auto;
+  background-image: url("https://picsum.photos/400/400");
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+}
+
+.card-img-bottom {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  padding: 0 0.5rem;
+  display: flex;
+  width: auto;
+  align-items: center;
+  height: 5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-img-bottom:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card-img-bottom > p {
+  flex-grow: 1;
+}
+
+.button {
+  color: gray;
+  background-color: white;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1000rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-info img.avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100rem;
+}
+
+.card-info .card-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-icon > i {
+  color: darkgray;
+}
+
+.card-info-left,
+.card-info-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-tier-pill {
+  color: white;
+  background-color: darkgray;
+  border-radius: 0.2rem;
+  padding-inline: 0.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-tier-pill:hover {
+  background-color: black;
+}
