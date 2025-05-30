@@ -1,0 +1,21 @@
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+  background-color: skyblue;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: cadetblue;
+}
+
+.button-red {
+  background-color: red;
+}
+
+.button-red:hover {
+  background-color: darkred;
+}

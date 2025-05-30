@@ -1,0 +1,26 @@
+.trip-card {
+  background-color: white;
+}
+
+.trip-card img {
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 1rem;
+}
+
+.trip-info h2,
+.trip-info p {
+  margin: 0px;
+}
+
+.trip-info p {
+  color: darkgray;
+  margin-top: 0.5rem;
+}

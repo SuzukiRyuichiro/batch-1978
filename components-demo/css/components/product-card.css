@@ -1,0 +1,25 @@
+.product-card {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 0 5px #33333350;
+  width: 30rem;
+}
+
+.product-card img {
+  width: 8rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card .product-info {
+  padding: 0 2rem;
+  flex-shrink: 1;
+}
+
+.product-info p {
+  color: darkgray;
+}
+
+.product-card img {
+  height: 8rem;
+}
