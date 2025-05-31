@@ -1,0 +1,43 @@
+.card {
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px;
+}
+
+.card h2 {
+  color: rgb(173, 83, 173);
+}
+
+.deal-quick-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.deal-quick-view-item {
+  background-color: rgb(238, 236, 236);
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  width: 45%;
+}
+
+.deal-quick-view-item h2 {
+  font-size: 48px;
+  color: black;
+  margin-bottom: 0;
+}
+
+.deal-quick-view-item p {
+  font-size: 36px;
+  color: lightgray;
+  margin-top: 0;
+}
+
+.company-deal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
