@@ -1,0 +1,15 @@
+.card-tier-pill {
+  background-color: gray;
+  color: white;
+  padding: 0.125rem;
+  border-radius: 0.125rem;
+  font-weight: 600;
+}
+
+.card-tier-pill p {
+  margin: 0;
+}
+
+.card-tier-pill:hover {
+  background-color: darkgray;
+}
