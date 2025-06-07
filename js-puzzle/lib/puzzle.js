@@ -2,7 +2,7 @@
 const tiles = document.querySelectorAll("td");
 
 const hasEmptyClass = (element) => {
-  // For the edge of the puzzle
+  // For the edge of the puzzle, element can be undefined
   if (element === undefined) {
     return false;
   }
@@ -10,11 +10,10 @@ const hasEmptyClass = (element) => {
   return element.classList.contains("empty");
 };
 
-const canMove = (tile) => {
+const canMove = (tile) => { // <td> element that was clicked
   let above;
   let below;
 
-  // <td> element
   // TODO: Check if a tile has an empty neighbour
   // get the index of the tile that was clicked within the row
   const indexOfTheTile = tile.cellIndex;
@@ -57,9 +56,9 @@ const canMove = (tile) => {
   return cellsToCheck.some(hasEmptyClass);
 };
 
-const moveTile = (element) => {
-  // <td> element that was clicked
+const moveTile = (element) => { // <td> element that was clicked
   // TOOD: Move the tile
+  
   // Get the number of the element that was clicked
   const numberToMove = element.innerText;
   // Get the empty cell
