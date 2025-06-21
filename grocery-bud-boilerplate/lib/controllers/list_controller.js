@@ -1,5 +1,9 @@
 import { Controller } from "@hotwired/stimulus";
 
+// We need to listen to the form submission
+// We need to know what is the item that's currently typed into the field
+// We need to have an access to the ul
+
 export default class extends Controller {
   static targets = ["form", "input", "groceries"];
 
@@ -9,10 +13,6 @@ export default class extends Controller {
     console.log(this.inputTarget);
     console.log(this.groceriesTarget);
   }
-
-  // We need to listen to the form submission
-  // We need to know what is the item that's currently typed into the field
-  // We need to have an access to the ul
 
   // Targets
   // - form
