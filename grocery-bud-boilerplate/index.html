@@ -20,19 +20,20 @@
 
   <body class="bg-secondary bg-opacity-10">
     <div class="container">
-      <div class="col-4 offset-4 my-5 bg-white py-4 rounded shadow">
+      <div class="col-4 offset-4 my-5 bg-white py-4 rounded shadow" data-controller="list">
         <div class="row">
           <h1 class="text-center mb-4">Grocery bud</h1>
-          <form class="d-flex align-items-center mb-3">
+          <form class="d-flex align-items-center mb-3" data-list-target="form"  data-action="submit->list#add">
             <div class="input-group mx-4">
-              <input type="text" class="form-control" placeholder="egs..." name="item" />
+              <input type="text" class="form-control" data-list-target="input" placeholder="egs..." name="item" />
               <button type="submit" class="btn btn-primary">Add</button>
             </div>
           </form>
         </div>
         <div class="row justify-content-center mx-4">
           <div class="col">
-            <ul class="list-group list-group-flush"></ul>
+            <ul class="list-group list-group-flush" data-list-target="groceries">
+            </ul>
           </div>
         </div>
       </div>
