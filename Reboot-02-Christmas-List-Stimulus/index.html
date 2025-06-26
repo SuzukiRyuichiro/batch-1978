@@ -23,51 +23,48 @@
     <script src="javascript/application.js" type="module"></script>
   </head>
   <body>
-    <div class="app-container">
+    <div class="app-container" data-controller="gifts">
       <h1 class="text-center my-4">🎁🎄 Christmas List 🎄🎁</h1>
 
-      <hr class="divider my-5" />
-
-      <h3>Your list 🎁</h3>
-      <ol id="list">
+      <ol id="wish-list" data-gifts-target="wishList">
       </ol>
 
-      <hr class="divider my-5" />
+      <div class="divider"></div>
 
       <h2>Add a new item</h2>
 
-      <form class="mb-3">
-        <div class="d-flex gap-5 align-items-end">
-          <div class="flex-grow-1">
+      <form id="wish-form" data-gifts-target="wishForm" data-action="submit->gifts#addItem">
+        <div class="row mb-3">
+          <div class="col">
             <label for="name" class="form-label">Name</label>
-            <input id="name" type="text" class="form-control" />
+            <input type="text" class="form-control" id="name" data-gifts-target="nameInput" />
           </div>
-          <div class="flex-grow-1">
+          <div class="col">
             <label for="price" class="form-label">Price</label>
-            <input id="price" type="number" class="form-control" />
+            <input type="number" class="form-control" id="price" data-gifts-target="priceInput" />
           </div>
         </div>
-        <button type="submit" class="btn btn-success w-100 mt-3">Submit</button>
+        <div class="row">
+          <div class="col">
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+          </div>
+        </div>
       </form>
 
-      <hr class="divider my-5" />
+      <div class="divider"></div>
 
       <h3>Find ideas! 💡</h3>
 
-      <form class="mb-3">
-        <div class="d-flex gap-5 align-items-end">
-          <div class="w-100">
-            <label for="search" class="form-label">What would you like to search for?</label>
-            <select id="search" class="form-select">
-              <option value="electronics">Electronics</option>
-              <option value="jewelery">Jewelery</option>
-              <option value="men's clothing">Men's clothing</option>
-              <option value="women's clothing">Women's clothing</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-success">Search</button>
+      <form id="search-form" data-action="submit->gifts#search">
+        <div class="input-group">
+          <select class="form-select" id="categories" data-gifts-target="categories">
+          </select>
+          <button class="btn btn-success" type="submit">Search</button>
         </div>
       </form>
+
+      <ul id="ideas" class="mt-2" data-gifts-target="ideasList">
+      </ul>
     </div>
   </body>
 </html>
