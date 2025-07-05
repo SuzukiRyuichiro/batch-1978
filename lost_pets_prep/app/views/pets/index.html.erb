@@ -1,0 +1,8 @@
+<h1>Lost pets 🐶</h1>
+
+
+<ul class="list-group">
+  <% @pets.each do |pet| %>
+    <li class="list-group-item"><%= pet.name %> found <%= pet.found_days_ago %> days ago 📍 <%= pet.address %></li>
+  <% end %>
+</ul>
