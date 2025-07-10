@@ -3,3 +3,26 @@
     <h1><%= @garden.name %></h1>
   </div>
 </div>
+<!-- Display cards of plants we have -->
+<div class="container mt-3">
+  <div class="row gx-5">
+    <% @garden.plants.each do |plant| %>
+      <div class="col-4">
+        <div class="card">
+          <img src="<%= plant.image_url%>" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><%= plant.name %></h5>
+            <%= link_to 'Delete', plant_path(plant), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Sure?' }  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= simple_form_for [@garden, @plant] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :image_url %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
