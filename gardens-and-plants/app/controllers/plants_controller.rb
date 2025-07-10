@@ -12,6 +12,11 @@ class PlantsController < ApplicationController
       redirect_to garden_path(@garden)
     else
       # render
+      render 'gardens/show', status: :unprocessable_entity
+
+      # We need to specify that we want the show.html.erb under gardens folder to render.
+      # It is because by default, when you say render :show, Rails would try to find a file
+      # that has the name `show` inside the `plants` folder, because we are in PlantsController
     end
   end
 
