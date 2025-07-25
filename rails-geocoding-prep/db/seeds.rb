@@ -1,16 +1,16 @@
 Flat.destroy_all
 
 flats = [
-  { name: "Shibuya Sky Loft", address: "2-24-12 Shibuya, Tokyo" },
-  { name: "Ginza Urban Retreat", address: "5-8-1 Ginza, Tokyo" },
-  { name: "Harajuku Hideaway", address: "1-19-11 Jingumae, Tokyo" },
-  { name: "Asakusa Zen Home", address: "2-3-1 Asakusa, Tokyo" },
-  { name: "Akihabara Tech Studio", address: "3-16-9 Sotokanda, Tokyo" },
-  { name: "Meguro Riverside", address: "1-5-1 Kamimeguro, Tokyo" },
-  { name: "Ebisu Garden Flat", address: "4-20-3 Ebisu, Tokyo" },
-  { name: "Roppongi Luxe", address: "7-14-7 Roppongi, Tokyo" },
-  { name: "Ueno Park View", address: "6-13-9 Ueno, Tokyo" },
-  { name: "Kichijoji Cozy Corner", address: "2-4-2 Kichijoji Minamicho, Tokyo" }
+  { name: "Shibuya Sky Loft", address: "Shibuya, Tokyo, Japan" },
+  { name: "Ginza Urban Retreat", address: "Ginza, Tokyo, Japan" },
+  { name: "Harajuku Hideaway", address: "Jingumae, Tokyo, Japan" },
+  { name: "Asakusa Zen Home", address: "Asakusa, Tokyo, Japan" },
+  { name: "Akihabara Tech Studio", address: "Kanda, Tokyo, Japan" },
+  { name: "Meguro Riverside", address: "Meguro, Tokyo, Japan" },
+  { name: "Ebisu Garden Flat", address: "Ebisu, Tokyo, Japan" },
+  { name: "Roppongi Luxe", address: "Roppongi, Tokyo, Japan" },
+  { name: "Ueno Park View", address: "Ueno, Tokyo, Japan" },
+  { name: "Kichijoji Cozy Corner", address: "Kichijoji, Tokyo, Japan" }
 ]
 
 flats.each do |flat|

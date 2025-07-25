@@ -1,9 +1,14 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[ show edit update destroy ]
+  before_action :set_flat, only: %i[show edit update destroy]
 
   # GET /flats or /flats.json
   def index
     @flats = Flat.all
+    @markers = @flats.geocoded.map do |flat|
+      { lng: flat.longitude, lat: flat.latitude,
+        popupHtml: render_to_string(partial: "info_window", locals: { flat: flat }),
+        markerHtml: render_to_string(partial: "marker", locals: { flat: flat }) }
+    end
   end
 
   # GET /flats/1 or /flats/1.json
@@ -58,13 +63,14 @@ class FlatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_flat
-      @flat = Flat.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def flat_params
-      params.require(:flat).permit(:name, :address)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_flat
+    @flat = Flat.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def flat_params
+    params.require(:flat).permit(:name, :address)
+  end
 end
