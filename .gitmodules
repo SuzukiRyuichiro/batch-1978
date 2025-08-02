@@ -1,3 +1,0 @@
-[submodule "rails-yelp-mvp/spec"]
-	path = rails-yelp-mvp/spec
-	url = git@github.com:lewagon/fullstack-challenges-03-Rails-restaurant-reviews-specs.git
